@@ -1,5 +1,5 @@
 // Button component
-import { ButtonProps } from "@/interfaces";
+import { type ButtonProps } from "@/interfaces";
 
 const Button: React.FC<ButtonProps> = ({ size = 'medium', shape = 'rounded-md', children }) => {
   const baseStyles = "px-4 py-2 font-semibold text-white";
