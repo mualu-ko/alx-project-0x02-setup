@@ -60,3 +60,8 @@ export interface UserModalProps {
   onSubmit: (post: UserProps) => void;
   user?: UserData; // optional, because we may open modal for "Add User"
 }
+
+export interface CardProps {
+  title: string;
+  content: string;
+}
