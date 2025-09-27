@@ -1,41 +1,62 @@
-// interfaces/index.ts
-
-// Props for a Card component
-export interface CardProps {
+// Post Interfaces
+export interface PostProps {
+  userId: number;
+  id: number;
   title: string;
-  description?: string; // optional
-  imageUrl?: string;    // optional
-  onClick?: () => void; // optional click handler
+  body: string;
 }
 
-// Props for a Button component
-export interface ButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  disabled?: boolean;
-  type?: "button" | "submit" | "reset";
-  variant?: "primary" | "secondary" | "danger" | "custom";
-  size?: "sm" | "md" | "lg";
-  rounded?: "sm" | "md" | "full";
-  bgColor?: string;   // Tailwind class for background color
-  textColor?: string; // Tailwind class for text color
-  href?: string;      // if provided, render as link
+export interface PostData {
+  userId: number;
+  id?: number;
+  title: string;
+  body: string;
 }
-export type PropertyProps = {
+
+export interface PostModalProps {
+  onClose: () => void;
+  onSubmit: (post: PostData) => void;
+}
+
+// User Interfaces
+export interface UserProps {
+  id: number;
   name: string;
-  address: {
-    state: string;
-    city: string;
-    country: string;
-  };
-  rating: number;
-  category: string[];
-  price: number;
-  offers: {
-    bed: string;
-    shower: string;
-    occupants: string;
-  };
-  image: string;
-  discount: string;
-};
+  username: string;
+  email: string;
+  address: Address;
+  phone: string;
+  website: string;
+  company: Company;
+}
+
+export interface Address {
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
+  geo: Geo;
+}
+
+export interface Geo {
+  lat: string;
+  lng: string;
+}
+
+export interface Company {
+  name: string;
+  catchPhrase: string;
+  bs: string;
+}
+
+// Alias UserData to match new requirement (same as UserProps)
+export type UserData = UserProps;
+
+// Modal Props for UserModal
+export interface UserModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onOpen: () => void;
+  onSubmit: (post: UserProps) => void;
+  user?: UserData; // optional, because we may open modal for "Add User"
+}
