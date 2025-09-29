@@ -1,7 +1,7 @@
 // Button component
 import { type ButtonProps } from "@/interfaces";
 
-const Button: React.FC<ButtonProps> = ({ size = 'medium', shape = 'rounded-md', children }) => {
+const Button: React.FC<ButtonProps> = ({ size = 'medium', shape = 'rounded-md',  }) => {
   const baseStyles = "px-4 py-2 font-semibold text-white";
   const sizeStyles = {
     small: "text-sm",
@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({ size = 'medium', shape = 'rounded-md', 
 
   return (
     <button className={`${baseStyles} ${sizeStyles} ${shapeStyles} bg-blue-600 hover:bg-blue-700`}>
-      {children}
+      {}
     </button>
   );
 }
